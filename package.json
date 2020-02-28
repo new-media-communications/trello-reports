@@ -1,11 +1,11 @@
 {
-  "name": "trello-project-management",
+  "name": "trello-report",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "make:global": "npm install -g .",
-    "remove:global": "npm uninstall -g trello-project-management"
+    "remove:global": "npm uninstall -g trello-report"
   },
   "bin": {
     "trello-report": "./index.js"
@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
-    "boxen": "^4.0.0",
+    "boxen": "^4.2.0",
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "configstore": "^5.0.1",
