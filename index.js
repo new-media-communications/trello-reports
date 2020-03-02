@@ -39,6 +39,20 @@ yargs
     await app.generateSpreadsheet(argv.spreadsheetId,  argv.type)
     console.log("DONE!");
   })
+
+  .command('auto-resize [spreadsheetId]', 'Autoresize Excel report', (yargs) => {
+    yargs.option('spreadsheetId', {
+      type: 'string',
+      describe: 'Google Spread Sheet Id',
+      demandOption: true,
+    })
+  }, async function (argv) {
+    console.log("Autoresize report...")
+    await app.maybeSetup()
+    await app.autoResizeSpreadsheet(argv.spreadsheetId)
+    console.log("DONE!");
+  })
+
   .command('auth google', 'Get Google token', (yargs) => {
   }, async function (argv) {
     await app.reAuthenticateGoogle()
