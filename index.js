@@ -30,7 +30,7 @@ yargs
     yargs.option('type', {
       type: 'string',
       default: 'by-month',
-      choices:  ['by-month', 'by-user'],
+      choices:  ['by-month', 'by-user', 'all'],
       describe: 'Spreadsheet report type',
     })
   }, async function (argv) {
