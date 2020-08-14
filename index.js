@@ -10,7 +10,9 @@ const app = require("./lib/app");
 clear();
 
 console.log(
-  chalk.yellow(figlet.textSync("Trello Report", { horizontalLayout: "full" }))
+  chalk.blueBright(
+    figlet.textSync("Trello Report", { horizontalLayout: "full" })
+  )
 );
 
 yargs
