@@ -15,7 +15,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
-    "boxen": "^4.2.0",
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "configstore": "^5.0.1",
@@ -28,6 +27,17 @@
     "yargs": "^15.1.0"
   },
   "devDependencies": {
-    "@types/axios": "^0.14.0"
+    "@types/axios": "^0.14.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }
