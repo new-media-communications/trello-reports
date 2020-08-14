@@ -1,8 +1,13 @@
 {
-  "name": "trello-report",
-  "version": "1.0.0",
+  "name": "@new-media-communications/trello-reports",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "author":{
+    "email": "fitimvata28@gmail.com",
+    "name": "Fitim Vata",
+    "url": "https://newmedia.al"
+  },
   "scripts": {
     "make:global": "npm install -g .",
     "remove:global": "npm uninstall -g trello-report"
@@ -11,7 +16,6 @@
     "trello-report": "./index.js"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
@@ -39,5 +43,8 @@
   },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
