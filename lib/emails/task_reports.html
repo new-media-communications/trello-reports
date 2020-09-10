@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+    <!--[if mso]>
+    <xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml>
+    <style>
+      td,th,div,p,a,h1,h2,h3,h4,h5,h6 {font-family: "Segoe UI", sans-serif; mso-line-height-rule: exactly;}
+    </style>
+  <![endif]-->
+    <title>Daily Tasks Report</title>
+    <style>
+      @media (max-width: 600px) {
+        .sm-w-full {
+          width: 100% !important;
+        }
+      }
+
+    .table-data { page-break-inside:auto }
+    .table-data tr { page-break-inside:avoid; page-break-after:auto }
+    .table-data thead { display:table-header-group }
+    .table-data tfoot { display:table-footer-group }
+
+
+    </style>
+  </head>
+
+  <body style="margin: 0; padding: 0; width: 100%; word-break: break-word; -webkit-font-smoothing: antialiased; background-color: #ffffff;">
+    <div style="display: none;">Please confirm your email address in order to activate your account</div>
+    <div role="article" aria-roledescription="email" aria-label="Confirm your email address" lang="en">
+      <table style="font-family: -apple-system, 'Segoe UI', sans-serif; width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+        <tr>
+          <td align="center" style="background-color: #ffffff;" bgcolor="#ffffff">
+            <table class="sm-w-full" style="width: 1280px; min-width: 960px" width="1280" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td style="padding: 16px 0; text-align: center;" align="center">
+                  <a href="https://newmedia.al">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/new-media-communications.appspot.com/o/site-assets%2Femail-logo-icon.png?alt=media&token=721e09f2-0248-4a39-90f4-b7ca28776c9e" width="100" alt="Maizzle" style="border: 0; max-width: 100%; line-height: 100%; vertical-align: middle;">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <table style="width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                    <tr>
+                      <td  style="background-color: #ffffff; border-radius: 4px; font-size: 16px; line-height: 24px; padding: 48px; text-align: left; color: #252f3f;" bgcolor="#ffffff" align="left">
+                        <table style="width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation" class="table-data">
+                        {{#each tasks}}
+                          <tr>
+                            <td>
+                              <table style="border: 1px solid #f4f5f7; table-layout: auto; width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                                <thead>
+                                    <tr>
+                                    <th colspan="5" style="background-color: #f9fafb; font-size: 20px; padding: 0.75rem;" bgcolor="#f9fafb">{{this.sheetName}}</th>
+                                    </tr>
+                                    <tr>
+                                    <th style="padding: 12px 16px;">
+                                        Board
+                                    </th>
+                                    <th style="padding: 12px 16px;">
+                                        Task
+                                    </th>
+                                    {{!-- <th style="padding: 12px 16px;">
+                                        Start&nbsp;Date
+                                    </th> --}}
+                                    <th style="padding: 12px 16px;">
+                                        End&nbsp;Date
+                                    </th>
+                                    <th style="padding: 12px 16px;">
+                                        Status
+                                    </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {{#each this.data}}
+                                {{#if this.isDue}}
+                                    <tr style="background-color: #fde8e8;" bgcolor="#fde8e8">
+                                {{else}}
+                                    <tr style="background-color: #f9fafb;" bgcolor="#f9fafb">
+                                {{/if}}
+                                  <td style="padding: 4px 16px;">
+                                    {{this.Board}}
+                                  </td>
+                                  <td style="padding: 4px 16px;">
+                                    {{this.Task}}
+                                  </td>
+                                  {{!-- <td style="padding: 4px 16px;">
+                                    {{this.StartDate}}
+                                  </td> --}}
+                                  <td style="padding: 4px 16px;">
+                                    {{this.EndDate}}
+                                  </td>
+                                  <td style="padding: 4px 16px; width: 120px; white-space: nowrap;">
+                                    {{#if this.redLabel}}
+                                        <p style="background-color: #fde8e8; border-radius: 4px; border: 2px solid #fbd5d5; display: inline-block; font-weight: 700; padding: 0.25rem 0.75rem; text-align: center; color: #e02424;">{{this.Status}}</p>
+                                    {{/if}}
+                                    {{#if this.greenLabel}}
+                                        <p style="background-color: #def7ec; border-radius: 4px; border: 2px solid #bcf0da; display: inline-block; font-weight: 700; padding: 0.25rem 0.75rem; text-align: center; color: #057a55;">{{this.Status}}</p>
+                                    {{/if}}
+                                    {{#if this.blueLabel}}
+                                        <p style="background-color: #e1effe; border-radius: 4px; border: 2px solid #c3ddfd; display: inline-block; font-weight: 700; padding: 0.25rem 0.75rem; text-align: center; color: #1c64f2;">{{this.Status}}</p>
+                                    {{/if}}
+                                    {{#if this.defaultLabel}}
+                                        <p style="background-color: #f4f5f7; border-radius: 4px; border: 2px solid #e5e7eb; display: inline-block; font-weight: 700; padding: 0.25rem 0.75rem; text-align: center; color: #4b5563;">{{this.Status}}</p>
+                                    {{/if}}
+                                  </td>
+                                </tr>
+                                {{/each}}
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="height: 24px;" height="24"></td>
+                          </tr>
+                        {{/each}}
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="height: 48px;" height="48"></td>
+                    </tr>
+                    <tr>
+                      <td style="font-size: 12px; padding-left: 24px; padding-right: 24px; text-align: center; color: #4b5563;" align="center">
+                        <p style="margin: 0 0 4px; text-transform: uppercase;">New Media Communications</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+
+</html>
