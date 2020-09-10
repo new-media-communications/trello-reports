@@ -45,7 +45,6 @@ yargs
       });
     },
     async function (argv) {
-      console.log(argv);
       console.log("Generating report...");
       await app.maybeSetup();
       if (argv.sendEmail) {
