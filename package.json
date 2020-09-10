@@ -24,10 +24,14 @@
     "configstore": "^5.0.1",
     "figlet": "^1.5.0",
     "googleapis": "^59.0.0",
+    "handlebars": "^4.7.6",
     "inquirer": "^7.3.3",
     "lodash": "^4.17.20",
+    "mandrill-api": "^1.0.45",
     "moment": "^2.27.0",
     "open": "^7.1.0",
+    "slugify": "^1.4.5",
+    "wkhtmltopdf": "^0.3.4",
     "yargs": "^15.4.1"
   },
   "devDependencies": {

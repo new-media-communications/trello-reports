@@ -33,11 +33,29 @@ yargs
         choices: ["by-month", "by-user", "all"],
         describe: "Spreadsheet report type",
       });
+      yargs.option("period", {
+        type: "string",
+        default: null,
+        describe: "Spreadsheet report period",
+      });
+      yargs.option("send-email", {
+        type: "string",
+        default: false,
+        describe: "Spreadsheet report period",
+      });
     },
     async function (argv) {
+      console.log(argv);
       console.log("Generating report...");
       await app.maybeSetup();
-      await app.generateSpreadsheet(argv.spreadsheetId, argv.type);
+      if (argv.sendEmail) {
+        await app.maybeSetupMandrill();
+      }
+      await app.generateSpreadsheet(argv.spreadsheetId, argv.type, {
+        period: argv.period,
+        sendEmail: argv.sendEmail,
+      });
+      await app.autoResizeSpreadsheet(argv.spreadsheetId);
       console.log("DONE!");
     }
   )
