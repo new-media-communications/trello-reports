@@ -18,7 +18,7 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
     "configstore": "^5.0.1",
